@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    {{title | title}}
+  {%endblock%}
+
+{%block page_css%}
+<link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+{%endblock%}
+
+{% block page_content  %}
+    <h1>{{title | title}} Challenge</h1>
+    {% if text is not None %}
+    <h2>{{text}}</h2>
+    {% else %}
+    <h2>No task available</h2>
+    {% endif %}
+
+{% endblock %}
